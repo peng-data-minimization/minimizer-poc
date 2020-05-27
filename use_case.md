@@ -27,6 +27,7 @@ A new utility-preserving anonymization method and an anonymization algorithm usi
 - Add constant noise to geo data and time data
 - Obscure start and end geo data of activity
 - Noise of numeric performance data (heartrate / speed / power output)
+- Aggregation / Grouping of data (over space or time)
 
 ## Implementation / Ideas
 - Breakdown of data minimization principles 
