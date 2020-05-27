@@ -5,19 +5,28 @@ Think in paper titles:
 
 `Plug and Play data minimization for streaming fitness tracking data`
 
-`Data Minimization in ETL streaming processes`
-
-`Real time data minimization for fitness tracking data`
-
 Implementations for:
 - Kafka using the Consumer/Producer API
 - Spark using the Spark Streaming API 
 
 ## Privacy Principle
-
+Data minimization
 
 ## State of scientific discussions 
+**Anonymizing Health Data.** 
 
+Case Studies and Methods to Get You Started
+200-page book that explains many techniques around anonymizing health data, but does not talk about the actual implementation. ISBN: 9781449363079, pdf available
+
+**Utility-preserving anonymization for health data publishing (DOI)**
+
+A new utility-preserving anonymization method and an anonymization algorithm using the proposed method. Through experiments on various datasets, we show that the utility of EHRs anonymized by the proposed method is significantly better than those anonymized by previous approaches.
+
+## Minimization priciples
+- Whitelist of fields
+- Add constant noise to geo data and time data
+- Obscure start and end geo data of activity
+- Noise of numeric performance data (heartrate / speed / power output)
 
 ## Implementation / Ideas
 - Breakdown of data minimization principles 
