@@ -3,7 +3,7 @@
 ## Title
 Think in paper titles:
 
-`Plug and Play data minimization for streaming fitness tracking data`
+`Plug and Play data minimization library for streaming fitness tracking data`
 
 Implementations for:
 - Kafka using the Consumer/Producer API
