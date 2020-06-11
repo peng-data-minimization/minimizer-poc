@@ -1,0 +1,26 @@
+spi:
+  workers: 2
+  cluster:
+    name: "testcluster"
+    bootstrap_broker_host: "localhost"
+    bootstrap_broker_kafka_port: 9092
+    bootstrap_broker_kafka_protocol: PLAINTEXT
+  consuming_topic: profile_data
+  producing_topic: minimized_profile_data
+
+minimizer:
+  max_threads: 4
+  methods:
+    average:
+      batch_size: 100
+      moving_average: true
+    perturb:
+      noise: 0.05
+      lib: cn_protect
+    differential_privacy:
+      mechansim: exponential
+      data_type: text
+      distance_measure: hemming
+      lib: ARX
+    k_anonymity:
+      config: /some/dir/some/file
