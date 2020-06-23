@@ -1,4 +1,12 @@
 # PENG Subject 5
 
-## data minimization library
+## data minimization base library
 
+**functionalities**
+
+
+## Steraming Provider Interfaces (SPI)
+
+### Apache Kafka
+
+### Apache Spark
