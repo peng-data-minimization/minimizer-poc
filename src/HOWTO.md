@@ -16,5 +16,5 @@ python3 yieldtest.py
 ## Start Consumer & Producer
 ```powershell
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic anon
-1..10 | Foreach-Object {sleep 3; return $_} | bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic unanon
+1..10 | Foreach-Object {sleep 3; return return "{`"some-number`":$_, `"something-unimportant`":`"bla`"}"} | bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic unanon
 ```
