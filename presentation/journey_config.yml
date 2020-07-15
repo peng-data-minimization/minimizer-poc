@@ -1,0 +1,38 @@
+streaming_platform:
+  type: kafka
+  broker_url: "fitness-data-pipeline-cp-kafka-headless:9092"
+  auth:
+  - user: null
+  - pw: null
+
+task_defaults:
+  input_offset_reset: latest
+  topic_encoding: "utf8"
+  storage_mode: "memory"
+  input_data_type: "json"
+
+
+tasks:
+- name: first
+  input_topic: "anon"
+  output_topic: "processed"
+  function:
+    name: "drop_keys"
+    args:
+      keys: ['heart_rate', 'power']
+
+- name: second
+  input_topic: "processed1"
+  output_topic: "processed2"
+  function:
+    name: "hash_keys"
+    args:
+      keys: ['user_name']
+      salt: "some_salt"
+
+- name: third
+  input_topic: "processed2"
+  output_topic: "processed3"
+  function:
+    name: "reduce_to_nearest_value"
+    keys: ["speed"]
